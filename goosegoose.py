@@ -86,7 +86,7 @@ def goosegoose_distribution(n = 10, player = 8,show = False, save = False):
         ax.set_yticks(np.arange(0,max(graph) + 0.05,0.05))
         ax.set_yticklabels([f'{int(_ * 100)}%' for _ in ax.get_yticks()])
 
-        fig.suptitle(f'{player}명과 게임을 {n}번 시행 할 때 오리가 {k}번 걸릴 확률',
+        fig.suptitle(f'{player}명과 게임을 {n}번 시행 할 때 오리가 {k}번 걸릴 확률분포표',
                         fontsize = 30)
 
         # n 의 수가 너무 크면 xticks 를 자동으로 조정하여 사용하고 적당하다면 모든 판수를 floating 
