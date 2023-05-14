@@ -14,7 +14,7 @@ plt.rc('font', family = 'malgun gothic')
 plt.style.use('fivethirtyeight')
 
 
-def goosegoose_distribution(n = 10, player = 8,show = False):
+def goosegoose_distribution(n = 10, player = 8,show = False, save = False):
 
     '''
     베르누이 시행을 따르는 오리 선택 확률을 구스구스덕 게임 룰에 맞춰 그래프로 나타내는 함수입니다.
@@ -110,4 +110,7 @@ def goosegoose_distribution(n = 10, player = 8,show = False):
     
     anim = FuncAnimation(fig, update, frames = n+1, interval = 500, repeat = True)
     
-    return HTML(anim.to_jshtml()),anim # 첫 번째 변수는 html 객체, 두 번째 변수는 animation 객체로 return 
+    if save == True: # 저장을 원할 시 goosegoose_distribution 이란 이름으로 저장 
+        anim.save('goosegoose_distribution.gif', writer = 'pillow')
+    
+    return HTML(anim.to_jshtml())
